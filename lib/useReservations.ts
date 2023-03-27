@@ -40,14 +40,14 @@ export const getReservations = async (microcmsClient, filters: string, success: 
 export const updateReservation = (microcmsClient, reservation: Reservation, success = () => {}) => {
   // 「予約メモの更新」のコードを追加する
   microcmsClient
-  .update({
-    endpoint: `reservations/${reservation.id}`,
-    content: reservation,
-  })
-  .then(() => {
-    success()
-  })
-  .catch((err) => console.error(err));
+    .update({
+      endpoint: `reservations/${reservation.id}`,
+      content: reservation,
+    })
+    .then(() => {
+      success()
+    })
+    .catch((err) => console.error(err));
 
   return reservation;
 }
